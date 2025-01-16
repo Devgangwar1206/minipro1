@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+
+        .card {
+            width: 300px;
+            height: auto;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card .image {
+            height: 50%;
+            background-color: #a0e8af;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card .image img {
+            width: 80px;
+            height: 80px;
+            opacity: 0.8;
+        }
+
+        .card .content {
+            padding: 20px;
+        }
+
+        .card .content .label {
+            display: inline-block;
+            background: #d3d3d3;
+            color: #333;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card .content h3 {
+            margin: 10px 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .card .content p {
+            font-size: 14px;
+            color: #666;
+            margin: 0 0 20px;
+        }
+
+        .card .content .tags {
+            margin-bottom: 20px;
+        }
+
+        .card .content .tags input {
+            width: calc(100% - 50px);
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card .content .tags button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .card .content .tags .tag-list {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .card .action {
+            text-align: center;
+        }
+
+        .card .action button {
+            background: linear-gradient(90deg, #6c63ff, #81ecec);
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .card .action button:hover {
+            background: linear-gradient(90deg, #81ecec, #6c63ff);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="image">
+            <img src="https://via.placeholder.com/80" alt="Placeholder Image">
+        </div>
+        <div class="content">
+            <div class="label">Label</div>
+            <h3>Heading</h3>
+            <p>This is a short description about the card.</p>
+
+            <div class="tags">
+                <input type="text" id="tag-input" placeholder="Add a tag">
+                <button onclick="addTag()">Add</button>
+                <div class="tag-list" id="tag-list"></div>
+            </div>
+
+            <div class="action">
+                <button>Action</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addTag() {
+            const input = document.getElementById('tag-input');
+            const tagList = document.getElementById('tag-list');
+
+            if (input.value.trim() !== "") {
+                const tag = document.createElement('span');
+                tag.textContent = input.value;
+                tag.style.display = 'inline-block';
+                tag.style.background = '#81ecec';
+                tag.style.color = '#333';
+                tag.style.padding = '5px 10px';
+                tag.style.margin = '5px';
+                tag.style.borderRadius = '5px';
+                tag.style.fontSize = '12px';
+                tagList.appendChild(tag);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Circle Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            
+            font-family: cursive;
+            background: rgb(63,94,251);
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(204,158,167,1) 100%);
+        }
+
+        .header {
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            padding: 20px;
+            
+        }
+
+        .logo {
+            justify-content: start;
+            background-image: url("logo.webp");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 30px;
+            width: 30px;
+            border-radius: 10px;
+            
+        }
+
+        .nav {
+            padding-left: 30px;
+            position: absolute;
+            left: 15vh;
+            display: flex;
+            align-items: start;
+            gap: 20px;
+        }
+
+        .nav-item {
+            color: #ffffff;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+   
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2vh;
+            margin-bottom: 10vh;
+
+        }
+
+        .chat-container {
+
+            width: 400px;
+            height: 560px;
+            background-color: transparent;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.361);
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .chat-header {
+            background-color: transparent;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .chat-window {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: transparent;
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+
+        .received {
+            background-color: #e1f0ff;
+            align-self: flex-start;
+        }
+
+        .sent {
+            background-color: #d1ffd6;
+            align-self: flex-end;
+        }
+
+        .timestamp {
+            display: block;
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.354);
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        .chat-input button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+            background-color: #0056b3;
+        }
+
+
+        .profile-photo{
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNCbUqOdgcLymzCCfDOPP7vvMo0VAZuoGCOXxPST6nCfV7ECuCXASsgz1ePf7xwrwW--4&usqp=CAU");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: 25vh;
+            border-radius: 50%;
+            height: 50vh;
+            width: 50vh;
+            background-color: blue;
+        }
+
+        .info-container{
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .active{
+            height: 50px;
+            width: 50px;
+            border-radius:50% ;
+            background-color: rgb(7, 212, 7);
+            position: relative;
+            top: 41vh;
+            left: 38vh;
+        }
+        .profile-name{
+            font-size: 3vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2vh;
+            margin-right: 25vh;
+        }
+        .profile-name > p{
+            font-size: medium;
+
+            
+            color: white;
+        }
+        footer{
+            padding-top: 50px;
+            padding-bottom: 40px;
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+        .header-logo{
+            display: flex;
+            gap: 20px;
+            padding-right: 15px;
+
+        }
+        .header-icon{
+            font-size: 25px;
+        }
+            
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    color: #333;
+}
+
+.notification-icon {
+    position: relative;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.notification-icon span {
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+#profile-logo{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+#add-card{
+    height: 32px;
+    width: 32px;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"></div>
+        
+        <nav class="nav">
+            <a href="#" class="nav-item">Home</a>
+            <a href="#" class="nav-item">Items</a>
+            <a href="#" class="nav-item">about</a>
+            <a href="#" class="nav-item">dragdrop</a>
+            
+            <!-- <div class="dropdown">
+                <button class="dropdown-btn">Options ▼</button>
+                <div class="dropdown-content">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                    <a href="#">Option 3</a>
+                </div>
+            </div> -->
+        </nav>
+        <div class="header-logo">
+            <a href="add-card.html"><img id="add-card" src="https://img.icons8.com/ios-filled/50/ffffff/add.png" alt="Sync"></a>
+            <a href="notification.html" style="text-decoration: none;">
+            
+                <div class="notification-icon">
+                    <span id="unreadCount">3</span>
+                    🔔
+                </div>
+              </a> 
+              <a href="view-profile.html"><img id="profile-logo" src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,q_auto,w_720/6734c540768161001d967df7.png" alt="Profile"></a>
+
+
+        </div>
+        
+
+
+        
+    </header>
+<div class="container">
+    <div class="info-container">
+        <div class="profile-photo">
+            <div class="active"></div>
+        </div>
+        <div class="profile-name">
+            <h1>Md. Shahib Anbar</h1>
+            <p>Active now</p>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat Room</h2>
+        </div>
+        <div class="chat-window" id="chat-window">
+            <div class="message received">
+                <p>Hello! What would you like to swap with my product?</p>
+                <span class="timestamp">10:01 AM</span>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+
+    
+<script>
+    function addMessage(text, sender = 'sent') {
+        const chatWindow = document.getElementById('chat-window');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}`;
+
+        const messageText = document.createElement('p');
+        messageText.textContent = text;
+
+        const timestamp = document.createElement('span');
+        const now = new Date();
+        timestamp.className = 'timestamp';
+        timestamp.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+        messageDiv.appendChild(messageText);
+        messageDiv.appendChild(timestamp);
+        chatWindow.appendChild(messageDiv);
+        chatWindow.scrollTop = chatWindow.scrollHeight; // Auto-scroll to the bottom
+    }
+
+    function getBotResponse(userInput) {
+        let response = "Your message is delivered your reply must be coming soon";
+        if (userInput.toLowerCase().includes('hello')) {
+            response = 'Hi there! What would you like to swap today?';
+        } else if (userInput.toLowerCase().includes('product')) {
+            response = 'Tell me more about the product you want to swap!';
+        } else if (userInput.toLowerCase().includes('bye')) {
+            response = 'Goodbye! Feel free to chat anytime.';
+        }
+        return response;
+    }
+
+    function sendMessage() {
+        const userInput = document.getElementById('user-input');
+        const message = userInput.value.trim();
+        if (message) {
+            addMessage(message, 'sent');
+            userInput.value = ''; // Clear input
+            const botResponse = getBotResponse(message);
+            setTimeout(() => addMessage(botResponse, 'received'), 500); // Delay bot response
+        }
+    }
+</script>
+
+</body>
+</html>

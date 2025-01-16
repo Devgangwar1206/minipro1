@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="logo.jpg">
+    <title>Swap Circle Header</title>
+    <link rel="stylesheet" href="card1.css">
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+    font-family: cursive;
+    background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(204,158,167,1) 100%);
+/* overflow: hidden; */
+}
+
+.header {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 20px;
+    
+}
+
+.logo {
+    justify-content: start;
+    background-image: url("logo.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    
+}
+
+.nav {
+    padding-left: 30px;
+    position: absolute;
+    left: 15vh;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.nav-item {
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+
+.search-input {
+    border: none;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 150px;
+}
+
+.search-btn {
+    
+    border: none;
+    
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #3A84E9;
+}
+.image{
+    background-color: #f0d4d0;
+    width: 400px;
+    height: 400px;
+    margin-top: 12vh;
+    margin-left: 100px;
+    border-radius: 20px;
+
+}
+.image img {
+    height: 400px;
+    width: 400px;
+    background-image:auto;
+    border-radius: 20px;
+}
+.box{
+    display: flex;
+    gap: 30px;
+    border-radius: 20px;
+}
+.about{
+    height: 400px;
+    width: 600px;
+    /* background-color: #e8e9e9; */
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 5px 20px;
+    
+}
+        #chat {
+            height: 40px;
+            width: 180px;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            margin-top: 20px;
+            background-color: limegreen;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        #chat:hover {
+            background-color: #32cd32;
+        }
+
+.div1{
+   color: white;
+    border-radius: 20px;
+    padding: 5px;
+}
+.div{
+    width: 30%;
+    background-color: rgba(204,158,167,1);
+    padding: 5px;
+    border-radius: 20px;
+}
+.div h3{
+    text-align: center;
+}  .box3 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .box3 p {
+            background-color: #4facfe;
+            color: white;
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .box3 p:hover {
+            background-color: #00c6fb;
+            transform: scale(1.1);
+            transition: 0.3s;
+        }#pre {
+            
+            margin: 30px auto;
+            display: block;
+            height: 50px;
+            width: 300px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            background-color: rgb(223, 208, 191);
+            color: #333;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #pre:hover {
+            background-color: #d4a373;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"></div>
+        
+        <nav class="nav">
+            <a href="#" class="nav-item">Home</a>
+            <a href="#" class="nav-item">Items</a>
+            <a href="#" class="nav-item">about</a>
+            <a href="#" class="nav-item">dragdrop</a>
+        </nav>        
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="search-btn">🔍</button>
+        </div>
+    </header>
+    <div class="box">
+        <div class="image"><img src="../img1.webp" alt="image"></div>
+        <div class="about">
+            <div class="div1" class="title"><h1 style="text-align: center;">TITLE</h1></div>
+            <div class="div1" class="detail">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla commodi voluptates in non error aliquid quo facere tempore rerum reprehenderit nesciunt, nihil dolore. Voluptatem odio nam delectus, excepturi recusandae saepe?
+                                 Illum aspernatur expedita quae lare velit totam reiciendis nam labore asperiores aliquid repellat ducimus quibusdam sit repudiandae placeat beatae ipsum hic nihil? Repudiandae dolores pariatur perferendis.
+            </div>
+            <div class="div"><h3>Swap with:</h3></div>
+            <div class="box3">
+                <div class="nox-item"><p>item1</p></div>
+                <div class="nox-item"><p>item1</p></div>
+                <div class="nox-item"><p>item1</p></div>
+                <div class="nox-item"><p>item1</p></div>
+                <div class="nox-item"><p>item1</p></div>
+            </div>
+            <a href="chat.html">
+                <button id="chat">Click here to chat</button>
+            </a>
+
+        </div>
+    </div>
+    <a href="index.html" style="text-decoration: none;"><button id="pre">Click to go to Previous Page</button></a>
+    
+</body>
+</html>

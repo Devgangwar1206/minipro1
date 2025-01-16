@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Edit Page</title>
+  <style>
+    
+    body {
+      margin: 0;
+      font-family: cursive;
+            background: rgb(63,94,251);
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(204,158,167,1) 100%);
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+   
+    .container {
+      display: flex;
+      width: 900px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.425);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+   
+    .sidebar {
+        
+background: rgba(204,158,167,1);
+      padding: 20px 0;
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .sidebar img {
+      width: 24px;
+      height: 24px;
+    }
+
+.container2 {
+    margin-left: 25vh;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+   
+    width: 400px;
+    text-align: center;
+}
+
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    color: #333;
+}
+
+.notification-icon {
+    position: relative;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.notification-icon span {
+    position: absolute;
+    top: -12px;
+    right: -18px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.notification-list {
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.notification {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notification.read {
+    background-color: #e0e0e0;
+    color: #888;
+}
+
+.notification span {
+    font-size: 14px;
+}
+
+.notification button {
+    background: none;
+    border: none;
+    color: #007BFF;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.notification button:hover {
+    text-decoration: underline;
+}
+
+button {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+          <a href="index.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Sync"></a>
+          <a href="view-profile.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/user-male-circle.png" alt="Profile"></a>
+          <a href="change-password.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/lock.png" alt="Password"></a>
+          <a href="notification.html">
+            
+               <div class="notification-icon">
+                    <span id="unreadCount">0</span>
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/bell.png" alt="Notifications">
+                </div>
+          </a>
+          <a href="add-card.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/add.png" alt="Sync"></a>
+          <a href="chat.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Sync"></a>
+            
+            
+        </div>
+
+
+        <div class="container2">
+        <div class="notification-header">
+            <h1>Notifications</h1>
+           
+        </div>
+        <div id="notificationList" class="notification-list">
+            <!-- Notifications will be dynamically loaded here -->
+        </div>
+        <button id="markAllRead">Mark All as Read</button>
+    </div>
+
+  <script>
+const notifications = [
+    { id: 1, message: "Your profile has been updated.", read: false },
+    { id: 2, message: "You have a new message from John.", read: false },
+    { id: 3, message: "Your password was successfully changed.", read: true },
+    { id: 4, message: "Don't forget to complete your profile setup!", read: false }
+];
+
+const notificationList = document.getElementById("notificationList");
+const markAllReadButton = document.getElementById("markAllRead");
+const unreadCountElement = document.getElementById("unreadCount");
+
+// Function to render notifications
+function renderNotifications() {
+    notificationList.innerHTML = "";
+    notifications.forEach((notification) => {
+        const notificationItem = document.createElement("div");
+        notificationItem.className = `notification ${notification.read ? "read" : ""}`;
+        notificationItem.innerHTML = `
+            <span>${notification.message}</span>
+            <button onclick="markAsRead(${notification.id})">${notification.read ? "Read" : "Mark as Read"}</button>
+        `;
+        notificationList.appendChild(notificationItem);
+    });
+
+    // Update unread count
+    updateUnreadCount();
+}
+
+// Function to update the unread notification count
+function updateUnreadCount() {
+    const unreadCount = notifications.filter((notification) => !notification.read).length;
+    unreadCountElement.textContent = unreadCount;
+}
+
+// Function to mark a notification as read
+function markAsRead(id) {
+    const notification = notifications.find((n) => n.id === id);
+    if (notification) {
+        notification.read = true;
+        renderNotifications();
+    }
+}
+
+// Function to mark all notifications as read
+markAllReadButton.addEventListener("click", () => {
+    notifications.forEach((notification) => (notification.read = true));
+    renderNotifications();
+});
+
+// Initial rendering of notifications
+renderNotifications();
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Circle Header</title>
+    
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+    font-family: cursive;
+    background: rgb(63,94,251);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(204,158,167,1) 100%);
+}
+
+.header {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 20px;
+    
+}
+
+.logo {
+    justify-content: start;
+    background-image: url("logo.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    
+}
+
+.nav {
+    padding-left: 30px;
+    position: absolute;
+    left: 15vh;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.nav-item {
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.search-container {
+    
+}
+
+.search-input {
+    border: none;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 150px;
+}
+
+.search-btn {
+    
+    border: none;
+    
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #3A84E9;
+}
+
+.first-heading{
+    display: flex;
+    justify-content: space-between;
+    
+    height: 31vh;
+}
+.main-heading{
+    font-size:12vh;
+    color: white;
+    position: absolute;
+    left: 75vh;
+    top: 20px; 
+
+}
+.main-para{
+    color: white;
+    position: absolute;
+    left: 74vh;
+    top: 20vh
+}
+.head-buttons{
+    width: 80vh;
+    color:  #2D2E32;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    left: 80vh;
+    top:32vh
+
+
+   
+}
+.button{
+    height: 40px;
+    width: 100px;
+    
+    background-color: #74aeff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.card-list-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.card-section{
+
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    width: 100%;
+}
+.card{
+    background-color:#D9D9D9;
+    border-radius: 20px;
+    width: 33vh;
+    height: 35vh;
+    
+}
+.card-img{
+    height:70% ;
+    border-radius: 20px 20px 0px 0px;
+    padding: 2px;
+}
+.card-img img{
+    background-size:contain;
+    height:100%;
+    width:100%;
+    border-radius: 20px 20px 0 0;
+
+}
+.desc{
+    padding-left: 10px;
+    padding-top: 5px;
+    z-index: 2;
+}
+.card h1{
+    font-size: 20px;
+}
+.detail{
+    display: none;
+    background-color: inherit;
+    border-radius: 0 0 20px 20px;
+}
+.card{
+    box-shadow: rgba(0, 0, 0, 0.236) 2px 2px 2px 2px;
+}
+footer{
+    padding-top: 50px;
+    padding-bottom: 40px;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #2D2E32;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"></div>
+        
+        <nav class="nav">
+            <a href="#" class="nav-item">Home</a>
+            <a href="#" class="nav-item">Items</a>
+            <a href="#" class="nav-item">About</a>
+            <a href="#" class="nav-item">Dragdrop</a>
+        </nav>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="search-btn">🔍</button>
+        </div>
+    </header>
+    <div class="first-heading">
+        <h1 class="main-heading">Swap Circle</h1>
+        <p class="main-para">Lorem, ipsum dolor sit amet consectetur adipisicing elitd officiis,<br>
+         dolores ipsum rerum reiciendis autem, perspiciatis atque natuntur,<br>
+          porro quaerat expedita culpa adipisci fugiat? Sed ratione maiores</p>
+    </div>
+    <div class="head-buttons">
+        <div class="button">
+            <a href="" style="text-decoration: none; color: #2D2E32;">Request</a>
+        </div>
+        <div  class="button">
+            <a href="" style="text-decoration: none; color: #2D2E32;">Swap</a>
+        </div>
+        <div  class="button">
+            <a href="" style="text-decoration: none; color: #2D2E32;">Event</a>
+        </div>
+    </div>
+
+    <div class="card-list-section">
+        <div class="card-section">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img"><img src="img1.webp" alt="Card 1"></div>
+                    <div class="desc">
+                        <h1>Card 1</h1>
+                        <p>Description 1</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="img2.webp" alt="Card 2"></div>
+                    <div class="desc">
+                        <h1>Card 2</h1>
+                        <p>Description 2</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="img3.webp" alt="Card 3"></div>
+                    <div class="desc">
+                        <h1>Card 3</h1>
+                        <p>Description 3</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img"><img src="img4.webp" alt="Card 4"></div>
+                    <div class="desc">
+                        <h1>Card 4</h1>
+                        <p>Description 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Swap Circle. All rights reserved.</p>
+        <p>Contact us: info@swapcircle.com</p>
+    </footer>
+</body>
+</html>

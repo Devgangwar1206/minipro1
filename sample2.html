@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      font-family: cursive;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(204,158,167,1) 100%);
+    height: 50vh;
+
+
+    }
+
+    header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: transparent;
+        }
+
+        .logo {
+            font-size: 34px;
+            font-weight: bold;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+    header .logout-btn {
+      background-color: #ff4d4d;
+      border: none;
+      padding: 8px 15px;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    header .logout-btn:hover {
+      background-color: #ff1a1a;
+    }
+
+    /* Profile Section */
+    .profile-container {
+      max-width: 800px;
+      height: 300px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 40px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: end;
+    }
+
+    .profile-photo {
+        position: absolute;
+        top: 100px;
+        right: 82vh;
+
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid  rgb(63,94,251);
+      margin-bottom: 20px;
+    }
+
+    .profile-info {
+      text-align: center;
+    }
+
+    .profile-info h2 {
+      margin: 10px 0;
+    }
+
+    .profile-info p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .action-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .action-buttons button {
+      background-color: #4CAF50;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+
+    .action-buttons button:hover {
+      background-color: #45a049;
+    }
+
+    .action-buttons .edit-btn {
+      background-color: #008CBA;
+    }
+
+    .action-buttons .edit-btn:hover {
+      background-color: #007bb5;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Swap Circle</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="logout-btn" onclick="logout()">Logout</button>
+
+        </div>
+    </header>
+
+  
+
+  <!-- Profile Section -->
+  <div class="profile-container">
+    <div class="profile-info">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Photo" class="profile-photo">
+      <h2>John Doe</h2>
+      <p>Email: johndoe@example.com</p>
+      <p>Phone: +123 456 7890</p>
+      <p>Location: New York, USA</p>
+      <div class="action-buttons">
+        <button class="edit-btn" onclick="editProfile()">Edit Profile</button>
+        <button onclick="viewOrders()">View Orders</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <script>
+    // JavaScript Functions
+    function logout() {
+      alert("You have logged out!");
+      // Redirect to the login page
+      window.location.href = "login.html";
+    }
+
+    function editProfile() {
+      alert("Redirecting to profile edit page...");
+      // Redirect to the edit profile page
+      window.location.href = "edit-profile.html";
+    }
+
+    function viewOrders() {
+      alert("Redirecting to orders page...");
+      // Redirect to the orders page
+      window.location.href = "orders.html";
+    }
+  </script>
+
+</body>
+</html>

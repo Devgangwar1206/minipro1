@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Edit Page</title>
+  <style>
+    
+    body {
+      margin: 0;
+      font-family: cursive;
+            background: rgb(63,94,251);
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(204,158,167,1) 100%);
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+   
+    .container {
+      display: flex;
+      width: 900px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.425);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    color: #333;
+}
+
+.notification-icon {
+    position: relative;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.notification-icon span {
+    position: absolute;
+    top: -12px;
+    right: -18px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+   
+    .sidebar {
+        
+background: rgba(204,158,167,1);
+      padding: 20px 0;
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .sidebar img {
+      width: 24px;
+      height: 24px;
+    }
+
+    #profile{
+        position: absolute;
+        font-size: 6rem;
+        top: 1.8rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(0, 16, 98);;
+    }
+    .profile-section {
+      display: flex;
+      padding: 40px;
+      
+    }
+
+    .profile-section h1 {
+      margin: 0 0 20px;
+      font-size: 2rem;
+      color: #333;
+      display: flex;
+      justify-content: center;
+    }
+
+    .form {
+        
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 15px;
+      gap: 20px;
+      width: 333px;
+    }
+
+    .form label {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .form input {
+      width: 300px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 5px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form input:focus {
+      border-color: rgba(204,158,167,1);
+      outline: none;
+    }
+
+    .profile-photo {
+      position: relative;
+      left: 8rem;
+
+      margin: 20px 0;
+    }
+
+    .profile-photo img {
+
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(204,158,167,1);
+      position: relative;
+    }
+
+    .profile-photo label {
+      position: relative;
+      left: 7rem;
+      background: pink;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      bottom: 10px;
+      right: calc(50% - 50px);
+      transform: translateX(50%);
+    }
+
+    .save-button {
+      position: relative;
+      top: 26rem;
+      right: 3rem;
+      text-align: end;
+    }
+
+    .save-button button {
+        width: auto;
+      background: rgb(199, 116, 133);
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .save-button button:hover {
+      background: rgb(255, 198, 210);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="sidebar">
+        <a href="index.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Sync"></a>
+      <a href="view-profile.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/user-male-circle.png" alt="Profile"></a>
+      <a href="change-password.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/lock.png" alt="Password"></a>
+      <a href="notification.html">
+            
+        <div class="notification-icon">
+             <span id="unreadCount">3</span>
+             <img src="https://img.icons8.com/ios-filled/50/ffffff/bell.png" alt="Notifications">
+         </div>
+      </a> 
+      <a href="add-card.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/add.png" alt="Sync"></a>
+      <a href="chat.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Sync"></a>
+  </div>
+    <div class="profile-section">
+      <h1 id="profile">Profile</h1>
+      <form class="form">
+        <div>
+          <label for="username">User Name</label><br>
+          <input type="text" id="username" placeholder="Enter your name">
+        </div>
+        <div>
+          <label for="email">E-mail</label><br>
+          <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div>
+          <label for="password">Password</label><br>
+          <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <div>
+          <label for="location">Location</label><br>
+          <input type="text" id="location" placeholder="Enter your location">
+        </div>
+        <div>
+          <label for="number">Phone</label><br>
+          <input type="tel" id="phone" placeholder="Enter your phone">
+        </div>
+        
+        
+      </form>
+      <div class="profile-photo">
+        <img src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,q_auto,w_720/6734c540768161001d967df7.png" alt="Profile Photo">
+        <label for="profile-photo">📷</label>
+        <input type="file" id="profile-photo" style="display: none;">
+      </div>
+      
+    </div>
+    <div class="save-button">
+        <button type="button" onclick="saveProfile()">Save Changes</button>
+      </div>
+  </div>
+
+  <script>
+    function saveProfile() {
+      alert('Profile saved successfully!');
+    }
+  </script>
+
+</body>
+</html>

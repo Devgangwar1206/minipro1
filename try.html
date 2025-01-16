@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.card-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.desc {
+    padding-top: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="card-section">
+        <!-- Cards will be injected here dynamically -->
+    </div>
+    
+    
+<script>// Function to fetch data from the API and create cards dynamically
+    function fetchCardsData() {
+        const apiUrl = 'https://fakestoreapi.com/products'; // URL of the Fake Store API
+    
+        fetch(apiUrl)
+            .then(response => response.json())  // Parse JSON response
+            .then(data => {
+                // Call the function to create cards with the fetched data
+                createCards(data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+    
+    // Function to create cards using the fetched data
+    function createCards(products) {
+        const cardSection = document.querySelector('.card-section'); // Select the card section
+        
+        // Loop through the fetched products data
+        products.forEach(product => {
+            // Create a new div for each card
+            const card = document.createElement('div');
+            card.classList.add('card'); // Add class for styling
+            
+            // Add content to the card
+            card.innerHTML = `
+                <div class="card-img">
+                    <img src="${product.image}" alt="${product.title}">
+                </div>
+                <div class="desc">
+                    <div class="tab">
+                        <h1>${product.title}</h1>
+                        <p>${product.description}</p>
+                        <p><strong>Price:</strong> $${product.price}</p>
+                    </div>
+                    <a href="product-details.html?id=${product.id}"><button id="detail"><i class="fa-solid fa-arrow-right"></i> View Details</button></a>
+                </div>
+            `;
+            
+            // Append the card to the card section
+            cardSection.appendChild(card);
+        });
+    }
+    
+    // Call the fetchCardsData function to load data when the page is loaded
+    document.addEventListener('DOMContentLoaded', fetchCardsData);
+    
+</script>    
+</body>
+</html>
